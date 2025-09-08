@@ -1,0 +1,81 @@
+@use '../abstracts' as abs;
+
+.guides {
+  margin-top: 40px;
+  padding-top: 79px;
+  padding-bottom: 79px;
+  background-color: abs.$white;
+
+  &__subtitle {
+    position: relative;
+    color: #000339;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 41px;
+      height: 4px;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 12px;
+      background: #000339;
+    }
+  }
+
+  &__description {
+    width: 459px;
+    margin: 20px auto 0;
+    color: #5a6473;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.875;
+  }
+
+  &__list {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    margin-top: 26px;
+    color: #3b3c45;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    color: abs.$link-blue;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  &__cta {
+    text-align: center;
+  }
+
+  &__button {
+    margin-top: 50px;
+    width: 170px;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}

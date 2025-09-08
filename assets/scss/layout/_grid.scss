@@ -1,0 +1,216 @@
+@use 'sass:map';
+@use 'sass:math';
+
+// Định nghĩa các breakpoint và độ rộng tối đa của container
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
+
+// Cấu hình lưới mặc định
+$grid-columns: 12 !default;
+$grid-gutter-base: 30px !default;
+
+// Quy mô gutter sử dụng đơn vị rem
+$gutters: (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 1rem,
+    4: 1.5rem,
+    5: 3rem
+);
+
+// Padding cơ bản cho gutter
+%gutter-padding {
+    padding-left: calc(var(--gutter-x, #{$grid-gutter-base}) * 0.5);
+    padding-right: calc(var(--gutter-x, #{$grid-gutter-base}) * 0.5);
+}
+
+// Container dạng fluid
+.container-fluid {
+    --gutter-x: #{$grid-gutter-base};
+    --gutter-y: 0;
+
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @extend %gutter-padding;
+}
+
+// Container cố định
+.container {
+    @extend .container-fluid;
+}
+
+// Row với margin âm để bù gutter
+.row {
+    --gutter-x: #{$grid-gutter-base};
+    --gutter-y: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--gutter-y) * -1);
+    margin-right: calc(var(--gutter-x) * -0.5);
+    margin-left: calc(var(--gutter-x) * -0.5);
+
+    >* {
+        margin-top: var(--gutter-y);
+        @extend %gutter-padding;
+    }
+}
+
+// Column mặc định và column tự động
+.col {
+    flex: 1 0 0%;
+}
+
+.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+}
+
+// Mixin tạo media query
+@mixin media-breakpoint-up($min-width, $bypass: false) {
+    @if $bypass {
+        @content;
+    }
+
+    @else {
+        @media (min-width: $min-width) {
+            @content;
+        }
+    }
+}
+
+// Mixin tạo các class row-cols
+@mixin generate-row-cols($infix) {
+    @for $i from 1 through math.div($grid-columns, 2) {
+        .row-cols#{$infix}-#{$i}>* {
+            flex: 0 0 auto;
+            width: math.div(100%, $i);
+        }
+    }
+}
+
+// Mixin tạo các class column
+@mixin generate-cols($infix) {
+
+    // Column cố định
+    @for $i from 1 through $grid-columns {
+        .col#{$infix}-#{$i} {
+            flex: 0 0 auto;
+            width: math.div(100%, $grid-columns) * $i;
+        }
+    }
+
+    // Column tự động
+    .col#{$infix}-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+// Mixin tạo các class offset
+@mixin generate-offsets($infix) {
+    @for $i from 0 through $grid-columns {
+        .offset#{$infix}-#{$i} {
+            margin-left: if($i ==0, 0, math.div(100%, $grid-columns) * $i);
+        }
+    }
+}
+
+// Mixin tạo các class order
+@mixin generate-orders($infix) {
+    @for $i from 0 through 5 {
+        .order#{$infix}-#{$i} {
+            order: $i;
+        }
+    }
+
+    .order#{$infix}-first {
+        order: -1;
+    }
+
+    .order#{$infix}-last {
+        order: 6;
+    }
+}
+
+// Mixin tạo các class gutter
+@mixin generate-gutters($infix) {
+    @each $key, $size in $gutters {
+
+        .g#{$infix}-#{$key},
+        .gx#{$infix}-#{$key} {
+            --gutter-x: #{$size};
+        }
+
+        .g#{$infix}-#{$key},
+        .gy#{$infix}-#{$key} {
+            --gutter-y: #{$size};
+        }
+    }
+}
+
+// Mixin tạo các class căn chỉnh hàng
+@mixin generate-justify-content($infix) {
+    .justify-content#{$infix}-start {
+        justify-content: flex-start;
+    }
+
+    .justify-content#{$infix}-end {
+        justify-content: flex-end;
+    }
+
+    .justify-content#{$infix}-center {
+        justify-content: center;
+    }
+
+    .justify-content#{$infix}-between {
+        justify-content: space-between;
+    }
+
+    .justify-content#{$infix}-around {
+        justify-content: space-around;
+    }
+}
+
+// Tạo các class responsive cho từng breakpoint
+@each $bp-name, $bp-width in $breakpoints {
+    $infix: if($bp-name ==xs, "", "-#{$bp-name}");
+    $max-width: map.get($container-max-widths, $bp-name);
+    $is-xs: $bp-name ==xs;
+
+    @include media-breakpoint-up($bp-width, $is-xs) {
+
+        // Đặt độ rộng tối đa cho container (trừ xs)
+        @if not $is-xs {
+            .container {
+                max-width: $max-width;
+            }
+        }
+
+        // Tạo các class row-cols, cols, offsets, orders, gutters, và justify-content
+        @include generate-row-cols($infix);
+        @include generate-cols($infix);
+        @include generate-offsets($infix);
+        @include generate-orders($infix);
+        @include generate-gutters($infix);
+        @include generate-justify-content($infix);
+    }
+}

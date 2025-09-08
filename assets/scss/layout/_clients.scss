@@ -1,0 +1,64 @@
+@use '../abstracts' as abs;
+
+%typography {
+  color: #7d8589;
+  font: {
+    size: 1.6rem;
+    weight: 500;
+  }
+}
+
+.clients {
+  margin-top: 79px;
+  padding-top: 43px;
+  padding-bottom: 23px;
+  background-color: abs.$white;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__trust {
+    &--description {
+      @extend %typography;
+      margin-top: 23px;
+    }
+  }
+
+  &__ratings {
+    text-align: right;
+
+    &--stars {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 24px;
+    }
+
+    &--description {
+      @extend %typography;
+      margin-top: 18px;
+      color: #7d8589;
+    }
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 70px;
+  }
+
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 204px;
+    height: 91px;
+    border-radius: 12px;
+
+    &:hover {
+      box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+}

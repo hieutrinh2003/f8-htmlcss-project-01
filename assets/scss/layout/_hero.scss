@@ -1,0 +1,48 @@
+@use '../abstracts' as abs;
+
+.hero {
+  position: relative;
+  padding-top: 122px;
+  background-color: abs.$header-bg;
+  height: calc(100vh - 94px);
+
+  &__info {
+    width: 52%;
+  }
+
+  &__subtitle {
+    color: #687690;
+    font-size: abs.$font-size-hero;
+    font-weight: 500;
+    letter-spacing: abs.$font-size-hero * 0.1;
+  }
+
+  &__title {
+    margin-top: 8px;
+    color: #000336;
+    font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 118.75%;
+  }
+
+  &__description {
+    margin-top: 30px;
+    color: #5a6473;
+    font-size: abs.$font-size-hero;
+    font-weight: 400;
+    line-height: 177.778%;
+    text-transform: capitalize;
+  }
+
+  &__cta {
+    margin-top: 40px;
+    font-size: 1.3rem;
+    min-width: 170px;
+  }
+
+  &__image {
+    position: absolute;
+    right: calc((100vw - 1110px) * 0.3);
+    bottom: 0;
+  }
+}

@@ -1,0 +1,139 @@
+@use '../abstracts' as abs;
+
+.stats {
+  margin-top: 75px;
+  padding: 50px 31px;
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__image-block {
+    position: relative;
+  }
+  &__image {
+    display: block;
+    margin-left: auto;
+    width: 400px;
+    height: 460px;
+    object-fit: cover;
+  }
+  &__trend {
+    position: absolute;
+    padding: 45px 22px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 239px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 90px 85px 100px 0 rgba(0, 0, 0, 0.06);
+
+    &--value {
+      color: #000339;
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: 0.026rem;
+    }
+    &--description {
+      margin-top: 8px;
+      color: #a7a7a7;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    &--divider {
+      margin: 25px 0;
+      display: block;
+      width: 100%;
+      height: 1.2px;
+      background: #e9e9e9;
+    }
+  }
+
+  &__avatars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 14px;
+
+    &--group {
+      display: flex;
+    }
+
+    &--item {
+      width: 16.337px;
+      height: 16.337px;
+      margin-left: -3px;
+      border-radius: 50%;
+      background: url(<path-to-image>) var(--bg-color, lightgray) 0.29px -3.45px / 136.491% 202.414% no-repeat;
+      box-shadow: 4px 4px 16px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    &--initial {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 7.261px;
+      font-weight: 450;
+      letter-spacing: -0.145px;
+    }
+  }
+
+  &__info {
+    margin-left: 165px;
+    margin-top: 79px;
+  }
+
+  &__subtitle {
+    position: relative;
+    color: #000339;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.28571;
+    width: 269px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 41px;
+      height: 4px;
+      border-radius: 12px;
+      background: #000339;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+    color: #5a6473;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.875;
+    width: 309px;
+  }
+
+  &__row--quantity {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &--item {
+      margin-top: 110px;
+      color: #000;
+      font-size: 6.4rem;
+      font-weight: 600;
+    }
+
+    &--description {
+      margin-top: 24px;
+      color: #7b8087;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+  }
+}

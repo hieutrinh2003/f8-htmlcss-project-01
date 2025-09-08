@@ -1,0 +1,103 @@
+@use '../abstracts' as abs;
+
+.featured {
+  background-color: abs.$featured-bg;
+  margin-top: 41px;
+  padding-top: 110px;
+  padding-bottom: 110px;
+
+  &__subtitle {
+    color: #000339;
+    font-size: 3.5rem;
+    font-weight: 600;
+  }
+
+  &__row {
+    margin-top: 15px;
+    position: relative;
+  }
+
+  &__description {
+    @include abs.line-clamp;
+    color: #5a6473;
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  &__link {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    color: abs.$link-blue;
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+  &__arrow {
+    margin-left: 8px;
+  }
+
+  &__list {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+  }
+  &__item {
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 65px 80px -46px rgba(226, 238, 249, 0.6);
+    // cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.1s ease-out;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+    }
+  }
+  &__thumbnail {
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    height: 227px;
+    object-fit: cover;
+  }
+
+  &__body {
+    padding: 17px 20px 22px;
+  }
+  &__title {
+    color: #000339;
+    font-size: 2rem;
+    font-weight: 600;
+
+    & a {
+      text-decoration: none;
+    }
+  }
+  &__description {
+    margin-top: 11px;
+    color: #a3a6ab;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  &__info {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    &:not(:first-child) {
+      margin-left: 22px;
+    }
+  }
+
+  &__label {
+    margin-left: 8px;
+    color: #444;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}
