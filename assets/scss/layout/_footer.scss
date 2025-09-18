@@ -5,15 +5,15 @@
 }
 
 .footer {
-  margin-top: 55px;
   padding-top: 50px;
   padding-bottom: 58px;
+  margin-top: 55px;
 
   &__row {
     display: flex;
     justify-content: space-between;
 
-    &--bottom {
+    &-bottom {
       margin-top: 81px;
     }
   }
@@ -32,19 +32,25 @@
   &__list {
     margin-top: 40px;
     display: grid;
-    row-gap: 18px;
+    gap: 18px;
   }
 
   &__link {
     @extend %typography;
   }
 
+  &__description {
+    @extend %typography;
+    margin-top: 40px;
+    line-height: 1.75;
+  }
+
   &__social {
     margin-top: 40px;
     display: flex;
-    column-gap: 16px;
+    gap: 16px;
 
-    &--link {
+    &-link {
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -66,12 +72,6 @@
         }
       }
     }
-  }
-
-  &__description {
-    @extend %typography;
-    margin-top: 40px;
-    line-height: 1.75;
   }
 
   &__copyright {

@@ -1,10 +1,10 @@
 @use '../abstracts' as abs;
 
-.featured {
-  background-color: abs.$featured-bg;
-  margin-top: 41px;
+.features {
   padding-top: 110px;
   padding-bottom: 110px;
+  margin-top: 41px;
+  background-color: abs.$featured-bg;
 
   &__subtitle {
     color: #000339;
@@ -13,42 +13,41 @@
   }
 
   &__row {
-    margin-top: 15px;
     position: relative;
+    margin-top: 15px;
   }
 
   &__description {
-    @include abs.line-clamp;
     color: #5a6473;
     font-size: 1.6rem;
     font-weight: 400;
+    @include abs.line-clamp;
   }
 
   &__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     position: absolute;
     top: 5px;
     right: 0;
-    color: abs.$link-blue;
+    // typography
+    color: #0689ff;
     font-size: 1.8rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-  }
-  &__arrow {
-    margin-left: 8px;
   }
 
   &__list {
-    margin-top: 70px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 30px;
+    gap: 30px;
+    margin-top: 70px;
   }
+
   &__item {
     border-radius: 12px;
     background: #fff;
     box-shadow: 0 65px 80px -46px rgba(226, 238, 249, 0.6);
-    // cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.1s ease-out;
 
     &:hover {
@@ -56,16 +55,18 @@
       box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
     }
   }
+
   &__thumbnail {
-    border-radius: 12px 12px 0 0;
     width: 100%;
     height: 227px;
+    border-radius: 12px 12px 0 0;
     object-fit: cover;
   }
 
   &__body {
     padding: 17px 20px 22px;
   }
+
   &__title {
     color: #000339;
     font-size: 2rem;
@@ -83,9 +84,9 @@
   }
 
   &__info {
-    margin-top: 22px;
     display: flex;
     align-items: center;
+    margin-top: 22px;
   }
 
   &__icon {

@@ -2,16 +2,14 @@
 
 %typography {
   color: #7d8589;
-  font: {
-    size: 1.6rem;
-    weight: 500;
-  }
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 .clients {
-  margin-top: 79px;
   padding-top: 43px;
   padding-bottom: 23px;
+  margin-top: 79px;
   background-color: abs.$white;
 
   &__row {
@@ -19,27 +17,24 @@
     justify-content: space-between;
   }
 
-  &__trust {
-    &--description {
-      @extend %typography;
-      margin-top: 23px;
-    }
+  &__description {
+    margin-top: 23px;
+    @extend %typography;
   }
 
   &__ratings {
     text-align: right;
 
-    &--stars {
+    &-stars {
       display: flex;
       justify-content: flex-end;
       align-items: center;
       height: 24px;
     }
 
-    &--description {
-      @extend %typography;
+    &-description {
       margin-top: 18px;
-      color: #7d8589;
+      @extend %typography;
     }
   }
 
@@ -56,7 +51,7 @@
     width: 204px;
     height: 91px;
     border-radius: 12px;
-
+    transition: box-shadow 0.3s ease;
     &:hover {
       box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
     }

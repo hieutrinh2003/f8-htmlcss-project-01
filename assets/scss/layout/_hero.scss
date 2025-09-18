@@ -2,42 +2,48 @@
 
 .hero {
   position: relative;
-  padding-top: 122px;
-  background-color: abs.$header-bg;
   height: calc(100vh - 94px);
+  background-color: abs.$header-bg;
 
-  &__info {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     width: 52%;
+    height: 100%;
   }
 
   &__subtitle {
     color: #687690;
-    font-size: abs.$font-size-hero;
+    font-size: 1.8rem;
     font-weight: 500;
-    letter-spacing: abs.$font-size-hero * 0.1;
+    letter-spacing: 0.18rem;
   }
 
   &__title {
     margin-top: 8px;
+    // typography
     color: #000336;
     font-size: 6.4rem;
     font-weight: 700;
-    line-height: 118.75%;
+    line-height: 1.1875;
   }
 
   &__description {
     margin-top: 30px;
-    color: #5a6473;
-    font-size: abs.$font-size-hero;
+    // typography
+    color: abs.$secondary-color;
+    font-size: 1.8rem;
     font-weight: 400;
-    line-height: 177.778%;
+    line-height: 1.77778;
     text-transform: capitalize;
   }
 
   &__cta {
+    min-width: 170px;
     margin-top: 40px;
     font-size: 1.3rem;
-    min-width: 170px;
   }
 
   &__image {

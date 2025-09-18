@@ -25,49 +25,51 @@
     <meta name="theme-color" content="#ffffff" />
 
     <link rel="stylesheet" href="./assets/css/reset.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
-
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
 
   <body>
-    <header class="header">
+    <!-- Header -->
+    <header class="header header--sticky">
       <div class="container">
-        <nav class="nav">
-          <label for="menu-checkbox" class="nav__toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path
-                fill="currentColor"
-                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-              />
-            </svg>
-          </label>
-          <a href="#" class="nav__logo">
+        <div class="header__wrapper">
+          <a href="#" class="logo">
             <img src="./assets/img/logo.svg" alt="Besnik" />
           </a>
-          <ul class="nav__list" id="desktop-nav">
-            <li><a href="#" class="nav__link">Home</a></li>
-            <li><a href="#services" class="nav__link">Services</a></li>
-            <li><a href="#features" class="nav__link">Features</a></li>
-            <li><a href="#resources" class="nav__link">Resources</a></li>
-            <li><a href="#contact" class="nav__link">Contact</a></li>
-          </ul>
-          <div class="nav__action">
-            <a href="#!" class="nav__action--link">Sign in</a>
-            <a href="#!" class="btn nav__action--button">Sign up</a>
-          </div>
-        </nav>
+          <nav class="header__nav">
+            <label for="menu-checkbox" class="header__nav-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  fill="currentColor"
+                  d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                />
+              </svg>
+            </label>
+            <ul class="header__nav-list">
+              <li><a href="#" class="header__nav-link">Home</a></li>
+              <li><a href="#services" class="header__nav-link">Services</a></li>
+              <li><a href="#features" class="header__nav-link">Features</a></li>
+              <li><a href="#resources" class="header__nav-link">Resources</a></li>
+              <li><a href="#contact" class="header__nav-link">Contact</a></li>
+            </ul>
+            <div class="header__nav-actions">
+              <a href="#!" class="header__nav-in">Sign in</a>
+              <a href="#!" class="btn header__nav-up">Sign up</a>
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
 
     <main>
+      <!-- Hero Section -->
       <section class="hero">
         <div class="container">
-          <section class="hero__info">
+          <div class="hero__content">
             <p class="hero__subtitle">Welcome to Besnik Agency</p>
             <h1 class="hero__title">Discover a place you'll love to live.</h1>
             <p class="hero__description">
@@ -75,29 +77,30 @@
               simple search
             </p>
             <a href="#!" class="btn hero__cta">More About Us</a>
-          </section>
-          <figure class="hero__image">
+          </div>
+          <div class="hero__image">
             <img src="./assets/img/hero-img.svg" alt="Discover a place you'll love to live" />
-          </figure>
+          </div>
         </div>
       </section>
 
+      <!-- Clients Section -->
       <section class="clients">
         <div class="container">
           <div class="clients__row">
             <div class="clients__trust">
-              <img src="./assets/img/logo.svg" alt="Besnik" class="clients__logo" />
-              <p class="clients__trust--description">More than 45,000+ companies trust Besnik</p>
+              <img src="./assets/img/logo.svg" alt="Besnik" class="logo" />
+              <p class="clients__description">More than 45,000+ companies trust Besnik</p>
             </div>
             <div class="clients__ratings">
-              <div class="clients__ratings--stars">
+              <div class="clients__ratings-stars">
                 <img src="./assets/img/star.svg" alt="Star" />
                 <img src="./assets/img/star.svg" alt="Star" />
                 <img src="./assets/img/star.svg" alt="Star" />
                 <img src="./assets/img/star.svg" alt="Star" />
                 <img src="./assets/img/star.svg" alt="Star" />
               </div>
-              <p class="clients__ratings--description">5 Star Ratings (2k+ Review)</p>
+              <p class="clients__ratings-description">5 Star Ratings (2k+ Review)</p>
             </div>
           </div>
           <div class="clients__images">
@@ -110,7 +113,9 @@
         </div>
       </section>
 
-      <section id="services" class="guides">
+      <!-- Services Section/Guides Section -->
+      <span id="services"></span>
+      <section class="guides">
         <div class="container">
           <header class="guides__header">
             <h2 class="guides__subtitle">How it works?</h2>
@@ -158,73 +163,75 @@
         </div>
       </section>
 
-      <section id="features" class="featured">
+      <!-- Features Section -->
+      <span id="features"></span>
+      <section class="features">
         <div class="container">
-          <header class="featured__header">
-            <h2 class="featured__subtitle">Featured Properties</h2>
-            <div class="featured__row">
-              <p class="featured__description">Everything you need to know when you're looking</p>
-              <a href="#!" class="featured__link">
+          <header class="features__header">
+            <h2 class="features__subtitle">Features Properties</h2>
+            <div class="features__row">
+              <p class="features__description">Everything you need to know when you're looking</p>
+              <a href="#!" class="features__link">
                 <span>View All Properties</span>
-                <img src="./assets/img/arrow-right.svg" alt="Arrow right" class="featured__arrow" />
+                <img src="./assets/img/arrow-right.svg" alt="Arrow right" class="features__arrow" />
               </a>
             </div>
           </header>
-          <div class="featured__list">
-            <article class="featured__item">
-              <a href="#!" class="featured__thumbnail-link">
-                <img src="./assets/img/featured-1.png" alt="Nikko Apartments" class="featured__thumbnail" />
+          <div class="features__list">
+            <article class="features__item">
+              <a href="#!" class="features__thumbnail-link">
+                <img src="./assets/img/featured-1.png" alt="Nikko Apartments" class="features__thumbnail" />
               </a>
-              <div class="featured__body">
-                <h3 class="featured__title">
+              <div class="features__body">
+                <h3 class="features__title">
                   <a href="#!">Nikko Apartments</a>
                 </h3>
-                <p class="featured__description">8502 Preston Rd. Inglewood, Maine 98280</p>
-                <div class="featured__info">
-                  <img src="./assets/img/beds.svg" alt="" class="featured__icon" />
-                  <span class="featured__label">5 Beds</span>
-                  <img src="./assets/img/both.svg" alt="" class="featured__icon" />
-                  <span class="featured__label">2 Baths</span>
-                  <img src="./assets/img/sqft.svg" alt="" class="featured__icon" />
-                  <span class="featured__label">2000 Sqft</span>
+                <p class="features__description">8502 Preston Rd. Inglewood, Maine 98280</p>
+                <div class="features__info">
+                  <img src="./assets/img/beds.svg" alt="" class="features__icon" />
+                  <span class="features__label">5 Beds</span>
+                  <img src="./assets/img/both.svg" alt="" class="features__icon" />
+                  <span class="features__label">2 Baths</span>
+                  <img src="./assets/img/sqft.svg" alt="" class="features__icon" />
+                  <span class="features__label">2000 Sqft</span>
                 </div>
               </div>
             </article>
-            <article class="featured__item">
-              <a href="#!" class="featured__thumbnail-link">
-                <img src="./assets/img/featured-2.png" alt="CouCou Homestead" class="featured__thumbnail" />
+            <article class="features__item">
+              <a href="#!" class="features__thumbnail-link">
+                <img src="./assets/img/featured-2.png" alt="CouCou Homestead" class="features__thumbnail" />
               </a>
-              <div class="featured__body">
-                <h3 class="featured__title">
-                  <a href="#!" class="featured__title-link">CouCou Homestead</a>
+              <div class="features__body">
+                <h3 class="features__title">
+                  <a href="#!" class="features__title-link">CouCou Homestead</a>
                 </h3>
-                <p class="featured__description">8502 Preston Rd. Inglewood, Maine 98280</p>
-                <div class="featured__info">
-                  <img src="./assets/img/beds.svg" alt="" class="featured__icon" />
-                  <span class="featured__label">5 Beds</span>
-                  <img src="./assets/img/both.svg" alt="" class="featured__icon" />
-                  <span class="featured__label">2 Baths</span>
-                  <img src="./assets/img/sqft.svg" alt="" class="featured__icon" />
-                  <span class="featured__label">2000 Sqft</span>
+                <p class="features__description">8502 Preston Rd. Inglewood, Maine 98280</p>
+                <div class="features__info">
+                  <img src="./assets/img/beds.svg" alt="" class="features__icon" />
+                  <span class="features__label">5 Beds</span>
+                  <img src="./assets/img/both.svg" alt="" class="features__icon" />
+                  <span class="features__label">2 Baths</span>
+                  <img src="./assets/img/sqft.svg" alt="" class="features__icon" />
+                  <span class="features__label">2000 Sqft</span>
                 </div>
               </div>
             </article>
-            <article class="featured__item">
-              <a href="#!" class="featured__thumbnail-link">
-                <img src="./assets/img/featured-3.png" alt="Lavis 18 Residence" class="featured__thumbnail" />
+            <article class="features__item">
+              <a href="#!" class="features__thumbnail-link">
+                <img src="./assets/img/featured-3.png" alt="Lavis 18 Residence" class="features__thumbnail" />
               </a>
-              <div class="featured__body">
-                <h3 class="featured__title">
+              <div class="features__body">
+                <h3 class="features__title">
                   <a href="#!">Lavis 18 Residence</a>
                 </h3>
-                <p class="featured__description">8502 Preston Rd. Inglewood, Maine 98280</p>
-                <div class="featured__info">
-                  <img src="./assets/img/beds.svg" alt="" class="featured__icon" />
-                  <span class="featured__label">5 Beds</span>
-                  <img src="./assets/img/both.svg" alt="" class="featured__icon" />
-                  <span class="featured__label">2 Baths</span>
-                  <img src="./assets/img/sqft.svg" alt="" class="featured__icon" />
-                  <span class="featured__label">2000 Sqft</span>
+                <p class="features__description">8502 Preston Rd. Inglewood, Maine 98280</p>
+                <div class="features__info">
+                  <img src="./assets/img/beds.svg" alt="" class="features__icon" />
+                  <span class="features__label">5 Beds</span>
+                  <img src="./assets/img/both.svg" alt="" class="features__icon" />
+                  <span class="features__label">2 Baths</span>
+                  <img src="./assets/img/sqft.svg" alt="" class="features__icon" />
+                  <span class="features__label">2000 Sqft</span>
                 </div>
               </div>
             </article>
@@ -232,56 +239,96 @@
         </div>
       </section>
 
-      <section id="resources" class="stats">
+      <!-- Resources Section -->
+      <span id="resources"></span>
+      <section class="stats">
         <div class="container">
           <div class="stats__row">
             <figure class="stats__image-block">
               <img src="./assets/img/stats-img.png" alt="You’ve found a neighborhood you love" class="stats__image" />
               <div class="stats__trend">
                 <div class="stats__trend-row">
-                  <strong class="stats__trend--value">40,000+</strong>
+                  <strong class="stats__trend-value">40,000+</strong>
                   <img src="./assets/img/arrow-trend-up.svg" alt="Trend Up" class="stats__trend-icon" />
                 </div>
-                <p class="stats__trend--description">By average for 2 bedroom apartments in San Francisco, CA</p>
-                <div class="stats__trend--divider"></div>
-                <div class="stats__avatars">
-                  <div class="stats__avatars--group">
-                    <img src="./assets/img/avatar-1.jpg" alt="Avatar" class="stats__avatars--item" />
-                    <img src="./assets/img/avatar-2.jpg" alt="Avatar" class="stats__avatars--item" />
-                  </div>
-                  <div class="stats__avatars--group">
-                    <img src="./assets/img/avatar-3.jpg" alt="Avatar" class="stats__avatars--item" />
-                    <img src="./assets/img/avatar-4.webp" alt="Avatar" class="stats__avatars--item" />
-                    <img src="./assets/img/avatar-5.jpg" alt="Avatar" class="stats__avatars--item" />
-                    <div class="stats__avatars--item stats__avatars--initial" style="--bg-color: #1f3bb1">R</div>
-                  </div>
-                  <div class="stats__avatars--group">
-                    <div class="stats__avatars--item stats__avatars--initial" style="--bg-color: #24d6d9">FJ</div>
-                    <img src="./assets/img/avatar-6.jpg" alt="Avatar" class="stats__avatars--item" />
-                    <div class="stats__avatars--item stats__avatars--initial" style="--bg-color: #f8c120">S</div>
-                  </div>
-                  <div class="stats__avatars--group">
-                    <img src="./assets/img/avatar-7.jpeg" alt="Avatar" class="stats__avatars--item" />
-                    <img src="./assets/img/avatar-8.jpg" alt="Avatar" class="stats__avatars--item" />
-                    <img src="./assets/img/avatar-9.jpg" alt="Avatar" class="stats__avatars--item" />
-                    <div class="stats__avatars--item stats__avatars--initial" style="--bg-color: #f97f6b">JJ</div>
-                  </div>
-                  <div class="stats__avatars--group">
-                    <img src="./assets/img/avatar-10.jpg" alt="Avatar" class="stats__avatars--item" />
-                    <div class="stats__avatars--item stats__avatars--initial" style="--bg-color: #73a242">QV</div>
-                  </div>
-                  <div class="stats__avatars--group">
-                    <img src="./assets/img/avatar-11.jpg" alt="Avatar" class="stats__avatars--item" />
-                    <img src="./assets/img/avatar-12.jpg" alt="Avatar" class="stats__avatars--item" />
-                  </div>
-                  <div class="stats__avatars--group">
-                    <img src="./assets/img/avatar-13.jfif" alt="Avatar" class="stats__avatars--item" />
-                    <div class="stats__avatars--item stats__avatars--initial" style="--bg-color: #1f3bb0">IU</div>
-                  </div>
-                </div>
+                <p class="stats__trend-description">By average for 2 bedroom apartments in San Francisco, CA</p>
+                <div class="stats__trend-divider"></div>
+                <ul class="stats__avatars">
+                  <li>
+                    <ul class="stats__avatars-group">
+                      <li><img src="./assets/img/avatar-1.jpg" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li><img src="./assets/img/avatar-2.jpg" alt="Avatar" class="stats__avatars-item" /></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="stats__avatars-group">
+                      <li><img src="./assets/img/avatar-3.jpg" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li><img src="./assets/img/avatar-4.webp" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li><img src="./assets/img/avatar-5.jpg" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li
+                        ><div class="stats__avatars-item stats__avatars--initial" style="--bg-color: #1f3bb1"
+                          >R</div
+                        ></li
+                      >
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="stats__avatars-group">
+                      <li
+                        ><div class="stats__avatars-item stats__avatars--initial" style="--bg-color: #24d6d9"
+                          >FJ</div
+                        ></li
+                      >
+                      <li><img src="./assets/img/avatar-6.jpg" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li
+                        ><div class="stats__avatars-item stats__avatars--initial" style="--bg-color: #f8c120"
+                          >S</div
+                        ></li
+                      >
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="stats__avatars-group">
+                      <li><img src="./assets/img/avatar-7.jpeg" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li><img src="./assets/img/avatar-8.jpg" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li><img src="./assets/img/avatar-9.jpg" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li
+                        ><div class="stats__avatars-item stats__avatars--initial" style="--bg-color: #f97f6b"
+                          >JJ</div
+                        ></li
+                      >
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="stats__avatars-group">
+                      <li><img src="./assets/img/avatar-10.jpg" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li
+                        ><div class="stats__avatars-item stats__avatars--initial" style="--bg-color: #73a242"
+                          >QV</div
+                        ></li
+                      >
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="stats__avatars-group">
+                      <li><img src="./assets/img/avatar-11.jpg" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li><img src="./assets/img/avatar-12.jpg" alt="Avatar" class="stats__avatars-item" /></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="stats__avatars-group">
+                      <li><img src="./assets/img/avatar-13.jfif" alt="Avatar" class="stats__avatars-item" /></li>
+                      <li
+                        ><div class="stats__avatars-item stats__avatars--initial" style="--bg-color: #1f3bb0"
+                          >IU</div
+                        ></li
+                      >
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </figure>
-            <div class="stats__info">
+            <div class="stats__content">
               <h2 class="stats__subtitle">You’ve found a neighborhood you love.</h2>
               <p class="stats__description">
                 When you own a home, you’re committing to living in one location for a while. In a recent Trulia survey,
@@ -289,24 +336,26 @@
               </p>
             </div>
           </div>
-          <div class="stats__row--quantity">
+          <dl class="stats__row-quantity">
             <div class="stats__quantity">
-              <strong class="stats__quantity--item">2,500</strong>
-              <p class="stats__quantity--description">Homes For Sale</p>
+              <dt class="stats__quantity-item">2,500</dt>
+              <dd class="stats__quantity-description">Homes For Sale</dd>
             </div>
             <div class="stats__quantity">
-              <strong class="stats__quantity--item">5,000+</strong>
-              <p class="stats__quantity--description">Homes Recently Sold</p>
+              <dt class="stats__quantity-item">5,000+</dt>
+              <dd class="stats__quantity-description">Homes Recently Sold</dd>
             </div>
             <div class="stats__quantity">
-              <strong class="stats__quantity--item">170+</strong>
-              <p class="stats__quantity--description">Price Reduced</p>
+              <dt class="stats__quantity-item">170+</dt>
+              <dd class="stats__quantity-description">Price Reduced</dd>
             </div>
-          </div>
+          </dl>
         </div>
       </section>
 
-      <section id="contact" class="subscription">
+      <!-- Contact Section/Subscribe Section -->
+      <span id="contact"></span>
+      <section class="subscription">
         <div class="container">
           <div class="subscription__body">
             <div class="subscription__info">
@@ -322,9 +371,10 @@
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <div class="footer__row footer__row--top">
+        <nav class="footer__row footer__row-top">
           <div class="footer__column">
             <h3 class="footer__heading">Product</h3>
             <ul class="footer__list">
@@ -356,7 +406,7 @@
             <h3 class="footer__heading">Get in touch</h3>
             <p class="footer__description">You’ll find your next home, in any style you prefer.</p>
             <div class="footer__social">
-              <a href="#!" class="footer__social--link">
+              <a href="#!" class="footer__social-link">
                 <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill-rule="evenodd"
@@ -366,7 +416,7 @@
                   />
                 </svg>
               </a>
-              <a href="#!" class="footer__social--link">
+              <a href="#!" class="footer__social-link">
                 <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M10.8769 1.00421C10.4793 1.18942 9.97583 1.36326 9.52462 1.42105C9.9835 1.13495 10.7115 0.539053 10.8769 0C10.4482 0.264789 9.67292 0.547579 9.16718 0.649895C8.7633 0.199895 8.18723 0 7.54895 0C6.32289 0 5.46781 1.09184 5.46781 2.36842V3.31579C3.66478 3.31579 1.90682 1.87247 0.812833 0.473684C0.615022 0.82624 0.51117 1.22825 0.512178 1.63753C0.512178 2.49916 1.26539 3.37358 1.86175 3.78947C1.49798 3.77763 0.809227 3.48584 0.509473 3.31579V3.34279C0.509473 4.464 1.25818 5.22521 2.27284 5.43742C2.08758 5.49095 1.86175 5.68421 0.992685 5.68421C1.27486 6.60079 2.69339 7.08537 3.66478 7.10526C2.9048 7.72437 1.54982 8.05263 0.509473 8.05263C0.329621 8.05263 0.232257 8.06305 0.0587158 8.04174C1.04047 8.69542 2.41167 9 3.66478 9C7.74729 9 9.97538 5.72305 9.97538 2.66684C9.97538 2.56642 9.97223 2.23011 9.96727 2.13158C10.4036 1.80853 10.5803 1.47032 10.8769 1.00421Z"
@@ -374,7 +424,7 @@
                   />
                 </svg>
               </a>
-              <a href="#!" class="footer__social--link">
+              <a href="#!" class="footer__social-link">
                 <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.43969 3.31507H0.161566V9.98655H2.43969V3.31507Z" fill="#646464" />
                   <path
@@ -389,10 +439,10 @@
               </a>
             </div>
           </div>
-        </div>
-        <div class="footer__row footer__row--bottom">
+        </nav>
+        <div class="footer__row footer__row-bottom">
           <img src="./assets/img/logo.svg" alt="Besnik" class="footer__logo" />
-          <p class="footer__copyright">Copyright 2020.com, All rights reserved.</p>
+          <p class="footer__copyright"><small>Copyright 2020.com, All rights reserved.</small></p>
         </div>
       </div>
     </footer>
